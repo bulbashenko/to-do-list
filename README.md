@@ -1,7 +1,3 @@
-Вот пример README для вашего проекта:
-
----
-
 # To-Do List App
 
 **Autor:** bulbashenko (Aleksandr Albekov)  
