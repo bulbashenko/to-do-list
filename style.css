@@ -1,0 +1,179 @@
+/**
+ * Autor: bulbashenko (Aleksandr Albekov)
+ * Dátum: 27. október 2024
+ */
+
+/* Nastavenie písma */
+* {
+    font-family: Afacad;
+}
+
+/* Všeobecné nastavenia */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Biela farba pozadia stránky */
+    color: #ffffff; /* Biela farba textu predvolene */
+}
+
+main {
+    display: flex;
+    justify-content: center; /* Horizontálne centrovanie */
+    align-items: flex-start; /* Zarovnanie k hornému okraju */
+    min-height: 100vh; /* Minimálna výška obrazovky */
+    padding-top: 20px; /* Odstup zhora */
+}
+
+.todo-app {
+    background-color: #000000; /* Čierne pozadie kontajnera */
+    padding: 20px;
+    border-radius: 0; /* Ostré rohy */
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Tieň pre kontrast */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff; /* Biela farba nadpisu */
+}
+
+form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ffffff; /* Biely rámik */
+    border-radius: 0; /* Ostré rohy */
+    font-size: 16px;
+    background-color: #ffffff; /* Biele pozadie vstupného poľa */
+    color: #000000; /* Čierna farba textu vo vstupnom poli */
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ffffff; /* Biele pozadie tlačidla */
+    color: #000000; /* Čierna farba textu tlačidla */
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0; /* Ostré rohy */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+form button:hover {
+    background-color: #cccccc; /* Svetlosivé pozadie pri prechode */
+    color: #000000; /* Čierna farba textu pri prechode */
+}
+
+.filters {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    background: none;
+    border: 1px solid #ffffff; /* Biely rámik tlačidiel filtra */
+    background-color: #ffffff; /* Biele pozadie tlačidiel filtra */
+    color: #000000; /* Čierna farba textu tlačidiel filtra */
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #cccccc; /* Svetlosivé pozadie pri prechode a aktívnom stave */
+    color: #000000; /* Čierna farba textu pri prechode a aktívnom stave */
+}
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff; /* Biele pozadie úloh */
+    border: 1px solid #000000; /* Čierny rámik úloh */
+    border-radius: 0; /* Ostré rohy */
+    margin-bottom: 10px;
+    transition: background-color 0.3s, opacity 0.3s;
+    opacity: 1;
+    color: #000000; /* Čierna farba textu úloh */
+}
+
+.todo-item.completed {
+    background-color: #4caf50; /* Zelené pozadie pre dokončené úlohy */
+    text-decoration: line-through;
+    color: #ffffff; /* Biela farba textu pre dokončené úlohy */
+}
+
+.todo-item.removing {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.todo-text {
+    flex: 1;
+    margin: 0 10px;
+    word-break: break-word;
+    color: #000000; /* Čierna farba textu úloh */
+}
+
+.todo-actions {
+    display: flex;
+    align-items: center;
+}
+
+.todo-actions button {
+    background: none;
+    border: none;
+    color: #000000; /* Čierna farba ikon */
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.todo-actions button:hover {
+    color: #ff5722; /* Oranžová farba pri prechode */
+}
+
+/* Animácia pre odstraňovanie úloh */
+.todo-item.removing {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Adaptabilita pre menšie obrazovky */
+@media (max-width: 600px) {
+    .todo-app {
+        padding: 15px;
+    }
+
+    form button {
+        padding: 10px;
+    }
+
+    .filter-btn {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .todo-actions button {
+        font-size: 16px;
+    }
+}

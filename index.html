@@ -1,0 +1,41 @@
+<!--
+    Autor: bulbashenko (Aleksandr Albekov)
+    Dátum: 27. október 2024
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Sortable.js pre funkciu drag-and-drop -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Afacad:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <section class="todo-app">
+            <h1>To-Do List</h1>
+            <!-- Formulár na pridanie novej úlohy -->
+            <form id="todo-form">
+                <input type="text" id="todo-input" placeholder="Add a new task" required>
+                <button type="submit">Add</button>
+            </form>
+            <!-- Tlačidlá filtrov na zobrazenie úloh -->
+            <div class="filters">
+                <button data-filter="all" class="filter-btn active">All</button>
+                <button data-filter="active" class="filter-btn">Active</button>
+                <button data-filter="completed" class="filter-btn">Completed</button>
+            </div>
+            <!-- Zoznam úloh -->
+            <ul id="todo-list"></ul>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
